@@ -10,3 +10,6 @@ app.listen(PORT,()=>{
 app.get("/",(req,res)=>{
     res.send("Yes dude");
 });
+app.get("/hey",(req,res)=>{
+    res.send("Hello!");
+})
