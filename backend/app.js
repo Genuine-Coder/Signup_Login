@@ -12,4 +12,4 @@ app.get("/",(req,res)=>{
 });
 app.get("/hey",(req,res)=>{
     res.send("Hello!");
-})
+});
