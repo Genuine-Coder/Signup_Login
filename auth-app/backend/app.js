@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const AuthRouter = require('./Routes/AuthRouter.js');
+const ProductRouter = require('./Routes/ProductRouter.js');
+
 require('dotenv').config();
 require("./Models/db.js");
 const PORT = process.env.PORT || 8080;
@@ -16,6 +19,11 @@ app.listen(PORT,()=>{
 app.get("/",(req,res)=>{
     res.send("Yes dude");
 });
-app.get("/hey",(req,res)=>{
-    res.send("Hello!");
-});
+
+// app.get("/product",(req,res)=>{
+//     res.send("Hello!");
+// });
+
+//Auth 
+app.use("/auth",AuthRouter);
+app.use("/product",ProductRouter);
