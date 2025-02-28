@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
+
 const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter.js');
 const ProductRouter = require('./Routes/ProductRouter.js');
 
 require('dotenv').config();
 require("./Models/db.js");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
-app.use(bodyParser.json());
+app.use(express.json());
+
 app.use(cors());
 
 app.listen(PORT,()=>{
